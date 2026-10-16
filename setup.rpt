@@ -1,0 +1,163 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : System_TOP
+Version: O-2018.06-SP1
+Date   : Sat Oct  3 22:08:56 2026
+****************************************
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+  Startpoint: U0_Reg_file/mem_reg[2][7]
+              (rising edge-triggered flip-flop clocked by DFTCLK)
+  Endpoint: U1_CLK_DIV/div_clk_reg_reg
+            (rising edge-triggered flip-flop clocked by DFTCLK)
+  Path Group: DFTCLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFTCLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_Reg_file/mem_reg[2][7]/CK (SDFFSQX2M)                0.00       0.00 r
+  U0_Reg_file/mem_reg[2][7]/Q (SDFFSQX2M)                 0.60       0.60 r
+  U0_Reg_file/Reg2[7] (Register_file_test_1)              0.00       0.60 r
+  U0_MUXED_CLK_DIV/in[5] (clk_div_mux)                    0.00       0.60 r
+  U0_MUXED_CLK_DIV/U20/Y (INVX2M)                         0.09       0.69 f
+  U0_MUXED_CLK_DIV/U12/Y (NAND4BX1M)                      0.14       0.83 r
+  U0_MUXED_CLK_DIV/U13/Y (NOR3X2M)                        0.09       0.92 f
+  U0_MUXED_CLK_DIV/div_ratio[1] (clk_div_mux)             0.00       0.92 f
+  U1_CLK_DIV/i_div_ratio[1] (CLK_div_test_1)              0.00       0.92 f
+  U1_CLK_DIV/U7/Y (OR2X2M)                                0.21       1.13 f
+  U1_CLK_DIV/U18/Y (OR2X1M)                               0.24       1.37 f
+  U1_CLK_DIV/U20/Y (OR2X1M)                               0.25       1.61 f
+  U1_CLK_DIV/U22/Y (OR2X1M)                               0.27       1.89 f
+  U1_CLK_DIV/U25/Y (NOR3X1M)                              0.26       2.15 r
+  U1_CLK_DIV/U27/Y (NAND2BX1M)                            0.16       2.31 r
+  U1_CLK_DIV/U45/Y (XNOR2X1M)                             0.19       2.49 r
+  U1_CLK_DIV/U43/Y (CLKNAND2X2M)                          0.11       2.60 f
+  U1_CLK_DIV/U42/Y (OAI31X1M)                             0.25       2.85 r
+  U1_CLK_DIV/U41/Y (CLKINVX1M)                            0.13       2.98 f
+  U1_CLK_DIV/U9/Y (NAND2X2M)                              0.19       3.18 r
+  U1_CLK_DIV/U31/Y (MXI2X1M)                              0.12       3.29 f
+  U1_CLK_DIV/div_clk_reg_reg/D (SDFFRQX2M)                0.00       3.29 f
+  data arrival time                                                  3.29
+
+  clock DFTCLK (rise edge)                              100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -0.20      99.80
+  U1_CLK_DIV/div_clk_reg_reg/CK (SDFFRQX2M)               0.00      99.80 r
+  library setup time                                     -0.41      99.39
+  data required time                                                99.39
+  --------------------------------------------------------------------------
+  data required time                                                99.39
+  data arrival time                                                 -3.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       96.09
+
+
+  Startpoint: U0_ALU/Alu_Out_reg[8]
+              (rising edge-triggered flip-flop clocked by Gated_clk)
+  Endpoint: U0_ALU/Alu_Out_reg[9]
+            (rising edge-triggered flip-flop clocked by Gated_clk)
+  Path Group: Gated_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock Gated_clk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_ALU/Alu_Out_reg[8]/CK (SDFFRQX2M)                    0.00       0.00 r
+  U0_ALU/Alu_Out_reg[8]/Q (SDFFRQX2M)                     0.42       0.42 f
+  U0_ALU/Alu_Out_reg[9]/SI (SDFFRQX2M)                    0.00       0.42 f
+  data arrival time                                                  0.42
+
+  clock Gated_clk (rise edge)                            10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.20       9.80
+  U0_ALU/Alu_Out_reg[9]/CK (SDFFRQX2M)                    0.00       9.80 r
+  library setup time                                     -0.52       9.28
+  data required time                                                 9.28
+  --------------------------------------------------------------------------
+  data required time                                                 9.28
+  data arrival time                                                 -0.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        8.87
+
+
+  Startpoint: SE (input port clocked by DFTCLK)
+  Endpoint: U0_UART/U0_UART_TX/ser_U0/P_Data_register_reg[0]
+            (rising edge-triggered flip-flop clocked by DFTCLK)
+  Path Group: INREG
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFTCLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   20.00      20.00 r
+  SE (in)                                                 0.48      20.48 r
+  U24/Y (INVXLM)                                          0.19      20.68 f
+  U14/Y (INVXLM)                                          0.11      20.79 r
+  U13/Y (DLY1X1M)                                         1.06      21.84 r
+  U0_UART/test_se (UART_test_1)                           0.00      21.84 r
+  U0_UART/U0_UART_TX/test_se (Top_Tx_test_1)              0.00      21.84 r
+  U0_UART/U0_UART_TX/ser_U0/test_se (Serializer_tx_test_1)
+                                                          0.00      21.84 r
+  U0_UART/U0_UART_TX/ser_U0/U49/Y (INVXLM)                0.10      21.94 f
+  U0_UART/U0_UART_TX/ser_U0/U50/Y (INVXLM)                0.51      22.45 r
+  U0_UART/U0_UART_TX/ser_U0/P_Data_register_reg[0]/SE (SDFFRX1M)
+                                                          0.00      22.45 r
+  data arrival time                                                 22.45
+
+  clock DFTCLK (rise edge)                              100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -0.20      99.80
+  U0_UART/U0_UART_TX/ser_U0/P_Data_register_reg[0]/CK (SDFFRX1M)
+                                                          0.00      99.80 r
+  library setup time                                     -0.63      99.17
+  data required time                                                99.17
+  --------------------------------------------------------------------------
+  data required time                                                99.17
+  data arrival time                                                -22.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                       76.72
+
+
+  Startpoint: U0_ASYNC_FIFO/u0_empty_blk/bin_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by DFTCLK)
+  Endpoint: SO (output port clocked by DFTCLK)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFTCLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_ASYNC_FIFO/u0_empty_blk/bin_ptr_reg[2]/CK (SDFFRQX2M)
+                                                          0.00       0.00 r
+  U0_ASYNC_FIFO/u0_empty_blk/bin_ptr_reg[2]/Q (SDFFRQX2M)
+                                                          0.98       0.98 r
+  U0_ASYNC_FIFO/u0_empty_blk/rd_adr_blk[2] (rptr_empty_blk_test_1)
+                                                          0.00       0.98 r
+  U0_ASYNC_FIFO/test_so1 (Async_FIFO_test_1)              0.00       0.98 r
+  SO (out)                                                0.00       0.98 r
+  data arrival time                                                  0.98
+
+  clock DFTCLK (rise edge)                              100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -0.20      99.80
+  output external delay                                 -20.00      79.80
+  data required time                                                79.80
+  --------------------------------------------------------------------------
+  data required time                                                79.80
+  data arrival time                                                 -0.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                       78.82
+
+
+1
